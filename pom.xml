@@ -11,15 +11,15 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>angular-jwt</artifactId>
-    <version>0.0.7-SNAPSHOT</version>
+    <version>0.1.9-SNAPSHOT</version>
     <name>angular-jwt</name>
     <description>WebJar for angular-jwt</description>
     <url>http://webjars.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>0.0.6</upstream.version>
-        <upstream.url>https://raw.githubusercontent.com/auth0/angular-jwt/v${upstream.version}/dist</upstream.url>
+        <upstream.version>0.1.9</upstream.version>
+        <upstream.url>https://raw.githubusercontent.com/auth0/angular-jwt/${upstream.version}/dist</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>
         <requirejs>
             {
@@ -76,9 +76,9 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <mkdir dir="${destDir}" />
-                                <get src="${upstream.url}/angular-jwt.js" dest="${destDir}" />
-                                <get src="${upstream.url}/angular-jwt.min.js" dest="${destDir}" />
+                                <mkdir dir="${destDir}"/>
+                                <get src="${upstream.url}/angular-jwt.js" dest="${destDir}"/>
+                                <get src="${upstream.url}/angular-jwt.min.js" dest="${destDir}"/>
                             </target>
                         </configuration>
                     </execution>
@@ -88,13 +88,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.5</version>
+                <version>2.5.3</version>
             </plugin>
 
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.2</version>
+                <version>1.6.8</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>sonatype-nexus-staging</serverId>
